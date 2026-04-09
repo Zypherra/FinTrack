@@ -1,0 +1,89 @@
+/* Responsive Design Styles for complete application */
+@media screen and (max-width: 768px) {
+    .container {
+        display: flex !important;
+        flex-direction: column !important;
+        height: auto !important;
+        min-height: 100vh;
+    }
+
+    .hamburger-menu {
+        display: block !important;
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        z-index: 1001;
+        color: black;
+    }
+
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .nav-tabs {
+        display: none !important;
+    }
+
+    .sidebar {
+        padding: 15px;
+        padding-top: 60px;
+        flex-direction: column;
+        position: fixed !important;
+        left: -100%;
+        top: 0;
+        width: 250px;
+        height: 100vh;
+        z-index: 1000;
+        transition: left 0.3s ease;
+        background: #f4f4f4;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .sidebar.active {
+        left: 0 !important;
+    }
+
+    .sidebar-links {
+        text-align: center;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .charts {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .chart{
+        width: 100%;
+        height: 100%;
+    }
+
+    .table-section {
+        overflow-x: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .cards {
+        grid-template-columns: 1fr !important;
+    }
+
+    .money {
+        font-size: 18px;
+    }
+
+    .transaction-form select,
+    .transaction-form input,
+    .transaction-form button {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100%;
+    }
+}

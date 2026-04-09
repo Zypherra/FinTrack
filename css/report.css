@@ -1,0 +1,397 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas:
+        "navbar navbar"
+        "sidebar main";
+    height: 100vh;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar {
+    grid-area: navbar;
+    background: #4f46e5;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    justify-content: space-between;
+}
+
+.nav-tabs {
+    display: flex;
+    gap: 20px;
+    padding-right: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-tabs a {
+    color: white;
+    text-decoration: none;
+}
+
+#profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background: #f4f4f4;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin-bottom: 15px;
+}
+
+
+.sidebar-tabs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.sidebar-links {
+    margin-bottom: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid #4f46e5;
+    background-color: #e1e0ff;
+    color: #4f46e5;
+}
+
+.sidebar-links a {
+    padding: 10px;
+    display: block;
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sidebar-links a:hover {
+    background-color: #4f46e5;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.sidebar-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+    padding: 10px;
+    background-color: #e1e0ff;
+    border: 2px solid #4f46e5;
+    color: #4f46e5;
+    border-radius: 5px;
+}
+
+.sidebar-footer .user-name{
+    font-weight: bold;
+}
+
+.logout-btn {
+    background: rgb(255, 156, 156);
+    color: red;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: rgb(241, 31, 31);
+    color: white;
+    transition: 0.3s ease;
+}
+
+.sidebar-user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+}
+
+.sidebar-footer .profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.main {
+    grid-area: main;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+.add-report-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card.income {
+    background-color: #dcfce7;
+    border-left: 5px solid #22c55e;
+}
+
+.card.expense {
+    background-color: #fee2e2;
+    border-left: 5px solid #ef4444;
+}
+
+.card.balance {
+    background-color: #e0e7ff;
+    border-left: 5px solid #4f46e5;
+}
+
+.card.savings {
+    background-color: #dcfce7;
+    border-left: 5px solid #22c55e;
+}
+
+.money {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.charts {
+    display: flex;
+    gap: 20px;
+}
+
+.chart {
+    background: white;
+    height: 250px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 50%;
+}
+
+.table-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th,
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.category {
+    width: 120px;
+    height: 30px;
+    color: white;
+    border-radius: 15px;
+    text-transform: capitalize;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.amount {
+    font-weight: bold;
+}
+
+.amount.expense {
+    color: red;
+}
+
+.amount.income {
+    color: green;
+}
+
+/* Category colors */
+.category-salary {
+    background-color: #3b82f6;
+}
+
+.category-freelance {
+    background-color: #8b5cf6;
+}
+
+.category-investment {
+    background-color: #14b8a6;
+}
+
+.category-gift {
+    background-color: #ec4899;
+}
+
+.category-food {
+    background-color: #f97316;
+}
+
+.category-transport {
+    background-color: #06b6d4;
+}
+
+.category-shopping {
+    background-color: #7c3aed;
+}
+
+.category-bills {
+    background-color: #eab308;
+}
+
+.category-entertainment {
+    background-color: #d946ef;
+}
+
+.category-other {
+    background-color: #6b7280;
+}
+
+.category-salary {
+    background-color: #3b82f6;
+}
+
+.category-freelance {
+    background-color: #8b5cf6;
+}
+
+.category-investment {
+    background-color: #14b8a6;
+}
+
+.category-gift {
+    background-color: #ec4899;
+}
+
+.category-other {
+    background-color: #6b7280;
+}
+
+.download-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.download-btn button {
+    background: #4f46e5;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.download-btn button:hover {
+    background-color: #3730a3;
+}
+
+footer, footer p{
+    height: 50px;
+    display: flex;
+    background-color: black;
+    color: white;
+    font-family: cursive;
+    align-items: center;
+    justify-content: center;
+}
+
+@media print {
+
+    .sidebar,
+    .navbar,
+    footer,
+    .download-btn {
+        display: none !important;
+    }
+
+    .container {
+        display: block !important;
+        height: auto !important;
+    }
+
+    .main {
+        padding: 0 !important;
+        overflow: visible !important;
+        height: auto !important;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .chart {
+        break-inside: avoid;
+        margin-bottom: 20px;
+    }
+
+    .table-section {
+        break-inside: avoid;
+    }
+}

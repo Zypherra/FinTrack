@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/report.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Report</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="navbar">
+            <div class="hamburger-menu">
+                ☰
+            </div>
+            <div>
+                <h1>FinTrack</h1>
+            </div>
+            <div class="nav-tabs">
+                <img id="profile-img" src="./images/profile.jpg" alt="">
+            </div>
+        </header>
+
+        <aside class="sidebar">
+            <div class="sidebar-tabs">
+
+                <ul>
+                    <li class="sidebar-links "><a href="index.html">Dashboard</a></li>
+                    <li class="sidebar-links"><a href="add.html">Add Transaction</a></li>
+                    <li class="sidebar-links"><a href="transactions.html">View Transactions</a></li>
+                    <li class="sidebar-links"><a href="report.html">Reports</a></li>
+                </ul>
+                <hr>
+                <ul id="sidebar-link">
+                    <li class="sidebar-links"><a href="#">Settings</a></li>
+                    <li class="sidebar-links"><a href="about.html">About Us</a></li>
+                    <li class="sidebar-links"><a href="about.html">Contact Us</a></li>
+                </ul>
+                <hr>
+            </div>
+            <div class="sidebar-footer">
+                <div class="sidebar-user">
+                    <img class="profile-image" src="./images/profile.jpg" alt="">
+                    <div class="sidebar-user-info">
+                        <p class="user-name">User Name</p>
+                        <p>user@email.com</p>
+                    </div>
+                </div>
+                <button class="logout-btn">Log Out</button>
+            </div>
+        </aside>
+        <div class="main">
+            <div class="add-report-title">
+                <h1>Your Financial Report</h1>
+            </div>
+            <section class="cards">
+                <div class="card income">
+                    Income
+                    <div id="income" class="money">
+                        ₹0
+                    </div>
+                </div>
+                <div class="card expense">
+                    Expense
+                    <div id="expense" class="money">
+                        ₹0
+                    </div>
+                </div>
+                <div class="card balance">
+                    Balance
+                    <div id="balance" class="money">
+                        ₹0
+                    </div>
+                </div>
+                <div class="card savings">
+                    Savings
+                    <div id="savings" class="money">
+                        ₹0
+                    </div>
+                </div>
+            </section>
+
+
+            <div class="charts">
+                <div class="chart">
+                    <canvas id="expensePieChart"></canvas>
+                </div>
+                <div class="chart">
+                    <canvas id="incomeExpenseBarChart"></canvas>
+                </div>
+            </div>
+
+            <section class="table-section">
+                <h2>Expense Category Summary</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Total Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="expense-category-summary">
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="table-section">
+                <h2>Income Category Summary</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Total Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="income-category-summary">
+                    </tbody>
+                </table>
+            </section>
+
+            <div class="download-btn">
+                <button onclick="window.print()">Download PDF</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Created By: Parth Nag</p>
+    </footer>
+    <script src="js/storage.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/report.js"></script>
+</body>
+
+</html>

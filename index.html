@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/transactions.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="navbar">
+            <div class="hamburger-menu">
+                ☰
+            </div>
+            <div>
+                <h1>FinTrack</h1>
+            </div>
+            <div class="nav-tabs">
+                <img id="profile-img" src="./images/profile.jpg" alt="">
+            </div>
+        </header>
+
+        <aside class="sidebar">
+            <ul id="sidebar-link">
+                <li class="sidebar-links "><a href="index.html">Dashboard</a></li>
+                <li class="sidebar-links"><a href="add.html">Add Transaction</a></li>
+                <li class="sidebar-links"><a href="transactions.html">View Transactions</a></li>
+                <li class="sidebar-links"><a href="report.html">Reports</a></li>
+            </ul>
+            <hr>
+            <ul id="sidebar-link">
+                <li class="sidebar-links"><a href="#">Settings</a></li>
+                <li class="sidebar-links"><a href="about.html">About Us</a></li>
+                <li class="sidebar-links"><a href="about.html">Contact Us</a></li>
+            </ul>
+            <hr>
+            <div class="sidebar-footer">
+                <div class="sidebar-user">
+                    <img class="profile-image" src="./images/profile.jpg" alt="">
+                    <div class="sidebar-user-info">
+                        <p class="user-name">User Name</p>
+                        <p>user@email.com</p>
+                    </div>
+                </div>
+                <button class="logout-btn">Log Out</button>
+            </div>
+        </aside>
+
+        <main class="main">
+            <div class="add-dashboard-title">
+                <h1 id="dashboard-title">
+                    Dashboard
+                </h1>
+            </div>
+            <section class="cards">
+                <div class="card income">
+                    Income
+                    <div id="income" class="money">
+                        ₹0
+                    </div>
+                </div>
+                <div class="card expense">
+                    Expense
+                    <div id="expense" class="money">
+                        ₹0
+                    </div>
+                </div>
+                <div class="card balance">
+                    Balance
+                    <div id="balance" class="money">
+                        ₹0
+                    </div>
+                </div>
+                <div class="card savings">
+                    Savings
+                    <div id="savings" class="money">
+                        ₹0
+                    </div>
+                </div>
+            </section>
+
+            <section class="charts">
+                <div class="chart">
+                    <canvas id="expensePieChart"></canvas>
+                </div>
+                <div class="chart">
+                    <canvas id="incomeExpenseBarChart"></canvas>
+                </div>
+            </section>
+            <h3 class="table-title">Your Last 3 Transactions</h3>
+            <section class="table-section">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Category</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transaction-table-body">
+
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+
+    </div>
+    <footer>
+        <p>Created By: Parth Nag</p>
+    </footer>
+    <script src="js/storage.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

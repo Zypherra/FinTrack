@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Transaction</title>
+    <link rel="stylesheet" href="css/add.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="navbar">
+            <div class="hamburger-menu">
+                ☰
+            </div>
+            <div>
+                <h1>FinTrack</h1>
+            </div>
+            <div class="nav-tabs">
+                <img id="profile-img" src="./images/profile.jpg" alt="">
+            </div>
+        </header>
+
+        <aside class="sidebar">
+            <div class="sidebar-tabs">
+                <ul>
+                    <li class="sidebar-links "><a href="index.html">Dashboard</a></li>
+                    <li class="sidebar-links"><a href="add.html">Add Transaction</a></li>
+                    <li class="sidebar-links"><a href="transactions.html">View Transactions</a></li>
+                    <li class="sidebar-links"><a href="report.html">Reports</a></li>
+                </ul>
+                <hr>
+                <ul id="sidebar-link">
+                    <li class="sidebar-links"><a href="#">Settings</a></li>
+                    <li class="sidebar-links"><a href="about.html">About Us</a></li>
+                    <li class="sidebar-links"><a href="about.html">Contact Us</a></li>
+                </ul>
+                <hr>
+            </div>
+            <div class="sidebar-footer">
+                <div class="sidebar-user">
+                    <img id="sidebar-profile-img" src="./images/profile.jpg" alt="Profile">
+                    <div class="sidebar-user-info">
+                        <p class="user-name">User Name</p>
+                        <p>user@email.com</p>
+                    </div>
+                </div>
+                <button class="logout-btn">Log Out</button>
+            </div>
+        </aside>
+        <div class="main">
+            <div class="add-transaction-title">
+                <h1 id="transaction-title">
+                    Add Transaction
+                </h1>
+            </div>
+            <div class="transaction-form">
+                <form action="">
+
+                    <select name="type" id="type" required>
+                        <option value="">Select Type</option>
+                        <option value="Income">Income</option>
+                        <option value="Expense">Expense</option>
+                        <option value="Savings">Savings</option>
+                    </select>
+                    <select name="category" id="category" required>
+                    </select>
+                    <input type="number" id="amount" placeholder="Amount" required>
+                    <input type="date" id="date" placeholder="Date" required>
+
+                    <input type="text" id="description" placeholder="Description">
+
+                    <button type="submit" onclick="addTransaction(event)">Add Transaction</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Created By: Parth Nag</p>
+    </footer>
+    <script src="js/storage.js"></script>
+    <script src="js/transaction.js"></script>
+</body>
+
+</html>
